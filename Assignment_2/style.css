@@ -180,7 +180,17 @@ a { color: inherit; text-decoration: none; }
 .feature { display: grid; grid-template-columns: 1fr 683px; align-items: stretch; margin-top: 80px; }
 .feature-text { display: flex; flex-direction: column; justify-content: space-between; max-width: 330px; }
 .feature-text h3 { margin: 0; font-size: 22px; font-weight: 500; line-height: 1.4; color: #1e1b6b; }
-.feature-text p { margin: 20px 0 0; font-size: 14px; line-height: 1.7; color: var(--color-muted); }
+.feature-text p {
+  width: 322px;
+  max-width: 100%;
+  margin: 20px 0 0;
+  font-family: "DM Sans", sans-serif;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 26px;
+  letter-spacing: 0;
+  color: #15143966;
+}
 .btn-pill {
   display: inline-flex; align-items: center; justify-content: center;
   width: 132px; height: 46px; border: 1px solid #e3e6ee; border-radius: 999px;
@@ -192,7 +202,7 @@ a { color: inherit; text-decoration: none; }
 }
 .feature-media img { display: block; width: 100%; height: 100%; object-fit: cover; }
 .feature-dot {
-  position: absolute; top: 50%; left: 50%; width: 52px; height: 52px;
+  position: absolute; top: 50%; left: 50%; width: 84.43px; height: 84.43px;
   transform: translate(-50%, -50%); border-radius: 50%; background: #4f46e5;
 }
 
@@ -201,6 +211,13 @@ a { color: inherit; text-decoration: none; }
 .testimonial-grid {
   display: grid; grid-template-columns: 1fr 1fr; gap: 60px 60px;
   width: min(900px, 100%); margin: 70px auto 0;
+}
+.testimonial img {
+  flex: 0 0 70px;
+  width: 70px;
+  height: 70px;
+  border-radius: 10px;
+  object-fit: cover;
 }
 .testimonial { display: flex; gap: 24px; }
 .avatar-sq {
@@ -212,22 +229,89 @@ a { color: inherit; text-decoration: none; }
 .testimonial figcaption { margin-top: 24px; font-size: 12px; letter-spacing: 0.2em; color: var(--color-muted); }
 
 /* ---------- Team ---------- */
+/* ---------- Team ---------- */
 .team { margin-top: 140px; }
-.team-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 32px; margin-top: 70px; }
-.team-card { padding-top: 44px; text-align: center; border: 1px solid #e8ebf2; border-radius: 4px; }
+
+/* "OUR TEAM": Abel 14px, letter-spacing 45%, #8A898E */
+.team .eyebrow {
+  font-family: "Abel", sans-serif;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 28.5px;
+  letter-spacing: 0.45em;
+  text-indent: 0.45em; /* শেষ অক্ষরের স্পেসিংয়ের জন্য মাঝে ঠিক রাখে */
+  color: #8a898e;
+  text-align: center;
+}
+
+/* "Meet The Team": Abel 52px, #0B1B35, box height 29px */
+.team .section-title {
+  height: 29px;
+  margin: 24px 0 0;
+  font-family: "Abel", sans-serif;
+  font-weight: 400;
+  font-size: 52px;
+  line-height: 28.5px;
+  letter-spacing: 0;
+  color: #0b1b35;
+  text-align: center;
+}
+
+/* Group 23: 1170 x 370 → ৩টা কার্ড × ৩৭০px + ২ × ৩০px গ্যাপ */
+.team-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 30px;
+  margin-top: 53px; /* শিরোনামের নিচ (3130) থেকে কার্ডের top (3183) */
+}
+.team-card {
+  height: 370px;
+  padding-top: 50px; /* Member 1: top 50px */
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  border: 1px solid #e8ebf2;
+  border-radius: 4px;
+}
+
+/* Member 1: 120 x 120, কার্ডের মাঝে (left 125 = (370 - 120) / 2) */
 .team-avatar {
-  width: 115px; height: 115px; margin: 0 auto; border-radius: 50%;
-  display: flex; align-items: center; justify-content: center;
-  font-size: 24px; font-weight: 700; color: #075985;
-  background: #d9ecf7; box-shadow: 0 0 0 6px #e6f3fb;
+  flex: none;
+  width: 120px;
+  height: 120px;
+  margin: 0 auto;
+  border-radius: 50%;
+  object-fit: cover;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 24px;
+  font-weight: 700;
+  color: #075985;
+  background: #d9ecf7;
+  box-shadow: 0 0 0 6px #e6f3fb;
 }
 .team-card h3 { margin: 24px 0 0; font-size: 20px; font-weight: 500; color: #1e1b6b; }
+
+.team-img {
+  display: block;
+  flex: none;
+  width: 120px;
+  height: 120px;
+  margin: 0 auto;
+  border-radius: 50%;
+  object-fit: cover;
+}
 .team-card p { margin: 12px 0 0; font-size: 12px; letter-spacing: 0.25em; color: var(--color-muted); }
 .team-socials {
-  display: grid; grid-template-columns: repeat(3, 1fr); height: 63px; margin-top: 36px;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  height: 63px;
+  margin-top: auto; /* নিচে আটকে থাকে */
   border-top: 1px solid #e8ebf2;
 }
 .team-socials span + span { border-left: 1px solid #e8ebf2; }
+
 
 /* ---------- Newsletter ---------- */
 .newsletter { margin-top: 130px; }
@@ -288,6 +372,9 @@ a { color: inherit; text-decoration: none; }
   .section-title { font-size: 32px; }
   .footer-row { flex-direction: column; align-items: flex-start; }
   .footer-left, .footer-nav { flex-wrap: wrap; gap: 20px; }
+    .team .section-title { font-size: 40px; }
+  .team-card { height: auto; padding-bottom: 0; }
+  .team-socials { margin-top: 36px; }
 }
 
 @media (max-width: 480px) {
@@ -297,4 +384,5 @@ a { color: inherit; text-decoration: none; }
   .hero-section { width: calc(100% - 32px); margin-right: 16px; margin-left: 16px; }
   .hero-copy h1 { font-size: clamp(38px, 11vw, 52px); line-height: 1.16; }
   .hero-copy p { font-size: 18px; line-height: 1.4; }
+    .team .section-title { font-size: 34px; }
 }
