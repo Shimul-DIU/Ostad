@@ -25,6 +25,7 @@ a { color: inherit; text-decoration: none; }
 
 /* ---------- Header ---------- */
 .site-header {
+  position: relative; z-index: 20;
   width: min(1170px, calc(100vw - 48px));
   height: 49px;
   margin: 48px max(24px, calc((100vw - 1170px) / 2)) 0;
@@ -34,39 +35,22 @@ a { color: inherit; text-decoration: none; }
 }
 .site-logo { display: block; width: 240px; height: 49px; }
 .site-logo img { display: block; width: 100%; height: 100%; object-fit: contain; }
-.site-nav {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  gap: 41px;
-}
 
+.site-nav { display: flex; justify-content: center; align-items: center; gap: 41px; }
 /* About Us, Our App, Contacts: Poppins Medium 18px */
 .site-nav a {
-  font-family: "Poppins", sans-serif;
-  font-weight: 500;
-  font-size: 18px;
-  line-height: 28.5px;
-  letter-spacing: 0;
-  color: #000;
+  font-family: "Poppins", sans-serif; font-weight: 500;
+  font-size: 18px; line-height: 28.5px; letter-spacing: 0; color: #000;
 }
+/* Home: Abel Regular 18px */
+.site-nav a:first-child { font-family: "Abel", sans-serif; font-weight: 400; }
 
-/* Home: Abel Regular 18px (বাকিগুলোর থেকে আলাদা ফন্ট) */
-.site-nav a:first-child {
-  font-family: "Abel", sans-serif;
-  font-weight: 400;
-}
-
+.site-actions { display: flex; align-items: center; gap: 30px; font-size: 14px; }
 /* Log in: Poppins Medium 18px */
 .site-login {
-  font-family: "Poppins", sans-serif;
-  font-weight: 500;
-  font-size: 18px;
-  line-height: 28.5px;
-  letter-spacing: 0;
-  color: #000;
+  font-family: "Poppins", sans-serif; font-weight: 500;
+  font-size: 18px; line-height: 28.5px; letter-spacing: 0; color: #000;
 }
-.site-actions { display: flex; align-items: center; gap: 30px; font-size: 14px; }
 .site-signup {
   width: 119px; height: 49px;
   display: flex; align-items: center; justify-content: flex-start;
@@ -75,6 +59,21 @@ a { color: inherit; text-decoration: none; }
 }
 .site-signup-label { width: 69px; height: 29px; display: flex; align-items: center; font-size: 18px; line-height: 29px; }
 .site-signup:hover { opacity: 0.9; }
+
+/* Hamburger button (shown only on tablet and mobile) */
+.menu-toggle {
+  display: none;
+  flex-direction: column; align-items: center; justify-content: center; gap: 5px;
+  width: 44px; height: 44px; padding: 0;
+  border: 0; background: transparent; cursor: pointer;
+}
+.menu-toggle span {
+  display: block; width: 24px; height: 2px; border-radius: 2px;
+  background: #0b1b35; transition: transform 0.2s, opacity 0.2s;
+}
+.menu-toggle[aria-expanded="true"] span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+.menu-toggle[aria-expanded="true"] span:nth-child(2) { opacity: 0; }
+.menu-toggle[aria-expanded="true"] span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
 
 /* ---------- Hero ---------- */
 .hero-section {
@@ -147,8 +146,9 @@ a { color: inherit; text-decoration: none; }
 /* ---------- Services ---------- */
 .services-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 57px; margin-top: 103px; }
 .service-card {
-  min-height: 508px; padding: 44px 40px;
-  display: flex; flex-direction: column; align-items: center; justify-content: center;
+  min-height: 508px;
+  padding: 30.53px 40px 44px; /* icon top 1038.53 - card top 1008 */
+  display: flex; flex-direction: column; align-items: center; justify-content: flex-start;
   text-align: center; background: #fff; border-radius: 28px;
   box-shadow:
     0 2.77px 2.21px 0 #00000005,
@@ -158,34 +158,8 @@ a { color: inherit; text-decoration: none; }
     0 41.78px 33.42px 0 #0000000d,
     0 100px 80px 0 #00000012;
 }
-.service-card {
-  min-height: 508px;
-  padding: 30.53px 40px 44px; /* আইকনের top: 1038.53 - কার্ডের top 1008 */
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: flex-start;
-  text-align: center;
-  background: #fff;
-  border-radius: 28px;
-  box-shadow:
-    0 2.77px 2.21px 0 #00000005,
-    0 6.65px 5.32px 0 #00000007,
-    0 12.52px 10.02px 0 #00000009,
-    0 22.34px 17.87px 0 #0000000b,
-    0 41.78px 33.42px 0 #0000000d,
-    0 100px 80px 0 #00000012;
-}
-
-/* তিনটা আইকনই ৭৬.৪৭px বর্গ বাক্সে, ছবি মাঝখানে (Video ৭৬.৪৭ × ৫৭.৩৫) */
-.service-icon {
-  display: block;
-  flex: none;
-  width: 76.47px;
-  height: 76.47px;
-  margin: 0 auto;
-  object-fit: contain;
-}
+/* All icons sit in a 76.47px square box (Video is 76.47 x 57.35) */
+.service-icon { display: block; flex: none; width: 76.47px; height: 76.47px; margin: 0 auto; object-fit: contain; }
 .service-card h3 {
   margin: 20px 0 0; font-family: var(--font-oswald);
   font-size: 28px; font-weight: 300; color: #0b1b35;
@@ -322,14 +296,34 @@ a { color: inherit; text-decoration: none; }
   font-size: 16px; line-height: 26px; letter-spacing: 0; color: #15143966;
 }
 
-/* ---------- Responsive ---------- */
-@media (max-width: 850px) {
-  .site-header { grid-template-columns: 240px 1fr; }
-  .site-nav { display: none; }
-  .site-actions { justify-self: end; }
-}
+/* ====================================================
+   Responsive (widest first, each block stands alone)
+   ==================================================== */
+
+/* Large desktop: nav starts right after the logo, like Figma */
 @media (min-width: 1200px) {
-  .site-nav { justify-content: flex-start; padding-left: 119px; }
+  .site-nav { justify-content: flex-start; padding-left: 114px; }
+}
+
+/* Tablet and mobile: hamburger menu */
+@media (max-width: 1023px) {
+  .site-header { display: flex; align-items: center; justify-content: space-between; gap: 16px; }
+  .site-logo { flex: 0 1 240px; width: auto; min-width: 0; }
+  .site-actions { flex: none; gap: 16px; margin-left: auto; }
+  .menu-toggle { display: flex; }
+
+  /* Dropdown takes the full screen width */
+  .site-nav {
+    display: none;
+    position: absolute; top: calc(100% + 16px); left: 50%;
+    width: 100vw; transform: translateX(-50%);
+    flex-direction: column; align-items: stretch; gap: 0;
+    padding: 8px 0; background: #fff;
+    border-radius: 0 0 16px 16px;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.12);
+  }
+  .site-nav.is-open { display: flex; }
+  .site-nav a { padding: 14px 24px; }
 }
 
 @media (max-width: 900px) {
@@ -371,13 +365,31 @@ a { color: inherit; text-decoration: none; }
   .site-footer hr { margin: 24px 0; }
 }
 
+/* Mobile medium */
+@media (max-width: 600px) {
+  .site-actions { gap: 12px; }
+  .site-signup { width: 96px; height: 40px; padding-left: 0; justify-content: center; border-radius: 8px; }
+  .site-signup-label { width: auto; height: auto; font-size: 15px; line-height: 1; }
+}
+
+/* Mobile */
 @media (max-width: 480px) {
-  .site-header { width: calc(100% - 32px); grid-template-columns: minmax(0, 1fr) auto; }
-  .site-logo { width: min(240px, 100%); }
+  /* header spans the full screen width; Sign up + menu stay on the right */
+  .site-header { width: 100%; margin-left: 0; margin-right: 0; padding: 0 16px; }
+  .site-logo { flex-basis: 170px; }
   .site-login { display: none; }
+
   .hero-section { width: calc(100% - 32px); margin-right: 16px; margin-left: 16px; }
   .hero-copy h1 { font-size: clamp(38px, 11vw, 52px); line-height: 1.16; }
   .hero-copy p { font-size: 18px; line-height: 1.4; }
+
   .team .section-title { font-size: 34px; }
   .newsletter .section-title { font-size: 30px; }
+}
+
+/* Mobile small */
+@media (max-width: 360px) {
+  .site-logo { flex-basis: 140px; }
+  .site-signup { width: 84px; height: 36px; }
+  .site-signup-label { font-size: 14px; }
 }

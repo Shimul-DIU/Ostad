@@ -16,16 +16,19 @@
     <a href="#" class="site-logo" aria-label="Epixelab home">
       <img src="images/Logo.png" alt="Epixelab" width="240" height="49" />
     </a>
-    <nav class="site-nav" aria-label="Main navigation">
-      <a href="#">Home</a>
-      <a href="#">About Us</a>
-      <a href="#">Our App</a>
-      <a href="#">Contacts</a>
-    </nav>
-    <div class="site-actions">
-      <a href="#" class="site-login">Log in</a>
-      <a href="#" class="site-signup"><span class="site-signup-label">Sign up</span></a>
-    </div>
+    <nav class="site-nav" id="site-nav" aria-label="Main navigation">
+  <a href="#">Home</a>
+  <a href="#">About Us</a>
+  <a href="#">Our App</a>
+  <a href="#">Contacts</a>
+</nav>
+<div class="site-actions">
+  <a href="#" class="site-login">Log in</a>
+  <a href="#" class="site-signup"><span class="site-signup-label">Sign up</span></a>
+  <button class="menu-toggle" type="button" aria-label="Open menu" aria-expanded="false" aria-controls="site-nav">
+    <span></span><span></span><span></span>
+  </button>
+</div>
   </header>
 
   <main>
@@ -195,6 +198,6 @@
     <hr />
     <p class="footer-note">Startup Framework contains components and complex blocks which can easily be integrated into almost any design.</p>
   </footer>
-
+<script src="index.js"></script>
 </body>
 </html>
