@@ -1,6 +1,4 @@
-@import "tailwindcss";
-
-@theme {
+:root {
   --color-brand: #ff6a00;
   --color-navy: #0b1b3b;
   --color-ink: #1e2a4a;
@@ -12,7 +10,13 @@
 }
 
 *, *::before, *::after { box-sizing: border-box; }
-body { margin: 0; }
+body {
+  margin: 0;
+  background: #fff;
+  color: var(--color-ink);
+  font-family: var(--font-dm);
+  -webkit-font-smoothing: antialiased;
+}
 a { color: inherit; text-decoration: none; }
 .visually-hidden {
   position: absolute; width: 1px; height: 1px; overflow: hidden;
@@ -30,7 +34,38 @@ a { color: inherit; text-decoration: none; }
 }
 .site-logo { display: block; width: 240px; height: 49px; }
 .site-logo img { display: block; width: 100%; height: 100%; object-fit: contain; }
-.site-nav { display: flex; justify-content: center; align-items: center; gap: 38px; font-size: 14px; }
+.site-nav {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 41px;
+}
+
+/* About Us, Our App, Contacts: Poppins Medium 18px */
+.site-nav a {
+  font-family: "Poppins", sans-serif;
+  font-weight: 500;
+  font-size: 18px;
+  line-height: 28.5px;
+  letter-spacing: 0;
+  color: #000;
+}
+
+/* Home: Abel Regular 18px (বাকিগুলোর থেকে আলাদা ফন্ট) */
+.site-nav a:first-child {
+  font-family: "Abel", sans-serif;
+  font-weight: 400;
+}
+
+/* Log in: Poppins Medium 18px */
+.site-login {
+  font-family: "Poppins", sans-serif;
+  font-weight: 500;
+  font-size: 18px;
+  line-height: 28.5px;
+  letter-spacing: 0;
+  color: #000;
+}
 .site-actions { display: flex; align-items: center; gap: 30px; font-size: 14px; }
 .site-signup {
   width: 119px; height: 49px;
@@ -70,56 +105,31 @@ a { color: inherit; text-decoration: none; }
 }
 .hero-get-started-icon { width: 16px; height: 16px; flex: 0 0 16px; }
 .hero-get-started:hover { opacity: 0.9; }
-.hero-learn-more {
-  position: relative;
-  isolation: isolate;
-  width: 169px;
-  height: 60px;
-  display: flex;
-  flex: 0 0 169px;
-  align-items: center;
-  gap: 26px;
-  color: #000;
-  font-family: "Abel", sans-serif;
-  font-size: 18px;
-  font-weight: 400;
-  line-height: 28.5px;
-  letter-spacing: 0;
-}
 
+.hero-learn-more {
+  position: relative; isolation: isolate;
+  width: 169px; height: 60px;
+  display: flex; flex: 0 0 169px; align-items: center; gap: 26px;
+  color: #000; font-family: "Abel", sans-serif;
+  font-size: 18px; font-weight: 400; line-height: 28.5px; letter-spacing: 0;
+}
 /* "Subtract": 30 x 60 orange half-ring around the play button */
 .hero-learn-more::before {
-  position: absolute;
-  z-index: -1;
-  top: 0;
-  left: 0;
-  width: 30px;
-  height: 60px;
-  border-radius: 30px 0 0 30px;
+  position: absolute; z-index: -1; top: 0; left: 0;
+  width: 30px; height: 60px; border-radius: 30px 0 0 30px;
   background: radial-gradient(circle at 100% 50%, transparent 25px, #ff6600 25.5px);
   content: "";
 }
-
-/* Play icon: 40 x 40, #5F6064, 10px in from the left and top */
+/* Play icon: 40 x 40, #5F6064 */
 .hero-play {
-  width: 40px;
-  height: 40px;
-  display: flex;
-  flex: 0 0 40px;
-  align-items: center;
-  justify-content: center;
-  margin-left: 10px;
-  border-radius: 50%;
-  background: #5f6064;
-  color: #fff;
+  width: 40px; height: 40px;
+  display: flex; flex: 0 0 40px; align-items: center; justify-content: center;
+  margin-left: 10px; border-radius: 50%;
+  background: #5f6064; color: #fff;
 }
+.hero-play svg { width: 16px; height: 16px; }
 
-.hero-play svg {
-  width: 16px;
-  height: 16px;
-}
-
-/* Group 32: 707 x 618 at left 634px (page) = 499px inside the 1170px container */
+/* Group 32: 707 x 618 at left 634px (page) = 499px inside the container */
 .hero-art { position: absolute; top: 0; left: 499px; width: 707px; height: 618px; }
 .hero-art img { display: block; width: 100%; height: auto; }
 
@@ -135,7 +145,6 @@ a { color: inherit; text-decoration: none; }
 }
 
 /* ---------- Services ---------- */
-/* .services { margin-top: 90px; } */
 .services-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 57px; margin-top: 103px; }
 .service-card {
   min-height: 508px; padding: 44px 40px;
@@ -149,26 +158,39 @@ a { color: inherit; text-decoration: none; }
     0 41.78px 33.42px 0 #0000000d,
     0 100px 80px 0 #00000012;
 }
-.service-icon { width: 50px; height: 50px; margin: 0 auto; color: #000; }
+.service-card {
+  min-height: 508px;
+  padding: 30.53px 40px 44px; /* আইকনের top: 1038.53 - কার্ডের top 1008 */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  text-align: center;
+  background: #fff;
+  border-radius: 28px;
+  box-shadow:
+    0 2.77px 2.21px 0 #00000005,
+    0 6.65px 5.32px 0 #00000007,
+    0 12.52px 10.02px 0 #00000009,
+    0 22.34px 17.87px 0 #0000000b,
+    0 41.78px 33.42px 0 #0000000d,
+    0 100px 80px 0 #00000012;
+}
+
+/* তিনটা আইকনই ৭৬.৪৭px বর্গ বাক্সে, ছবি মাঝখানে (Video ৭৬.৪৭ × ৫৭.৩৫) */
+.service-icon {
+  display: block;
+  flex: none;
+  width: 76.47px;
+  height: 76.47px;
+  margin: 0 auto;
+  object-fit: contain;
+}
 .service-card h3 {
-  margin: 20px 0 0; font-family: var(--font-oswald); font-size: 28px; font-weight: 300; color: #0b1b35;
+  margin: 20px 0 0; font-family: var(--font-oswald);
+  font-size: 28px; font-weight: 300; color: #0b1b35;
 }
 .service-card p { margin: 18px 0 0; font-size: 18px; line-height: 30px; color: #000; }
-.service-label {
-  font-family: "Abel", sans-serif;
-  font-weight: 400;
-  font-size: 14px;
-  line-height: 28.5px;
-  letter-spacing: 0.45em;
-  text-align: center;
-  color: #8a898e;
-  width: 84px;
-  height: 29px;
-  margin: 12px auto 0;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
 .btn-orange {
   display: inline-flex; align-items: center; justify-content: center;
   width: 161px; height: 46px; margin-top: 30px; border-radius: 10px;
@@ -178,24 +200,16 @@ a { color: inherit; text-decoration: none; }
 
 /* ---------- Feature ---------- */
 .feature {
-  display: grid;
-  grid-template-columns: 1fr 683px;
-  align-items: stretch;
+  display: grid; grid-template-columns: 1fr 683px; align-items: stretch;
   min-height: 386px;   /* Group 19: 385.98px */
   margin-top: 181px;   /* 1697.01 - 1516 */
 }
 .feature-text { display: flex; flex-direction: column; justify-content: space-between; max-width: 330px; }
 .feature-text h3 { margin: 0; font-size: 22px; font-weight: 500; line-height: 1.4; color: #1e1b6b; }
 .feature-text p {
-  width: 322px;
-  max-width: 100%;
-  margin: 20px 0 0;
-  font-family: "DM Sans", sans-serif;
-  font-weight: 400;
-  font-size: 16px;
-  line-height: 26px;
-  letter-spacing: 0;
-  color: #15143966;
+  width: 322px; max-width: 100%; margin: 20px 0 0;
+  font-family: "DM Sans", sans-serif; font-weight: 400;
+  font-size: 16px; line-height: 26px; letter-spacing: 0; color: #15143966;
 }
 .btn-pill {
   display: inline-flex; align-items: center; justify-content: center;
@@ -215,249 +229,97 @@ a { color: inherit; text-decoration: none; }
 /* ---------- Testimonials ---------- */
 .testimonials { margin-top: 130px; }
 .testimonial-grid {
-  display: grid; grid-template-columns: 1fr 1fr; gap: 60px 60px;
+  display: grid; grid-template-columns: 1fr 1fr; gap: 60px;
   width: min(900px, 100%); margin: 70px auto 0;
 }
-.testimonial img {
-  flex: 0 0 70px;
-  width: 70px;
-  height: 70px;
-  border-radius: 10px;
-  object-fit: cover;
-}
 .testimonial { display: flex; gap: 24px; }
-.avatar-sq {
-  flex: 0 0 70px; width: 70px; height: 70px; border-radius: 6px;
-  display: flex; align-items: center; justify-content: center;
-  font-size: 16px; font-weight: 700; color: #1e1b6b; background: #e3e6ee;
-}
+.testimonial img { flex: 0 0 70px; width: 70px; height: 70px; border-radius: 10px; object-fit: cover; }
 .testimonial blockquote { margin: 0; font-size: 16px; line-height: 29px; }
 .testimonial figcaption { margin-top: 24px; font-size: 12px; letter-spacing: 0.2em; color: var(--color-muted); }
 
 /* ---------- Team ---------- */
-/* ---------- Team ---------- */
 .team { margin-top: 140px; }
-
-/* "OUR TEAM": Abel 14px, letter-spacing 45%, #8A898E */
 .team .eyebrow {
-  font-family: "Abel", sans-serif;
-  font-weight: 400;
-  font-size: 14px;
-  line-height: 28.5px;
-  letter-spacing: 0.45em;
-  text-indent: 0.45em; /* শেষ অক্ষরের স্পেসিংয়ের জন্য মাঝে ঠিক রাখে */
-  color: #8a898e;
-  text-align: center;
+  font-family: "Abel", sans-serif; font-weight: 400; font-size: 14px;
+  line-height: 28.5px; letter-spacing: 0.45em; text-indent: 0.45em;
+  color: #8a898e; text-align: center;
 }
-
-/* "Meet The Team": Abel 52px, #0B1B35, box height 29px */
 .team .section-title {
-  height: 29px;
-  margin: 24px 0 0;
-  font-family: "Abel", sans-serif;
-  font-weight: 400;
-  font-size: 52px;
-  line-height: 28.5px;
-  letter-spacing: 0;
-  color: #0b1b35;
-  text-align: center;
+  height: 29px; margin: 24px 0 0;
+  font-family: "Abel", sans-serif; font-weight: 400; font-size: 52px;
+  line-height: 28.5px; letter-spacing: 0; color: #0b1b35; text-align: center;
 }
-
-/* Group 23: 1170 x 370 → ৩টা কার্ড × ৩৭০px + ২ × ৩০px গ্যাপ */
-.team-grid {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 30px;
-  margin-top: 53px; /* শিরোনামের নিচ (3130) থেকে কার্ডের top (3183) */
-}
+.team-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 30px; margin-top: 53px; }
 .team-card {
-  height: 370px;
-  padding-top: 50px; /* Member 1: top 50px */
-  display: flex;
-  flex-direction: column;
-  text-align: center;
-  border: 1px solid #e8ebf2;
-  border-radius: 4px;
+  height: 370px; padding-top: 50px;
+  display: flex; flex-direction: column; text-align: center;
+  border: 1px solid #e8ebf2; border-radius: 4px;
 }
-
-/* Member 1: 120 x 120, কার্ডের মাঝে (left 125 = (370 - 120) / 2) */
-.team-avatar {
-  flex: none;
-  width: 120px;
-  height: 120px;
-  margin: 0 auto;
-  border-radius: 50%;
-  object-fit: cover;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 24px;
-  font-weight: 700;
-  color: #075985;
-  background: #d9ecf7;
-  box-shadow: 0 0 0 6px #e6f3fb;
-}
+.team-img { display: block; flex: none; width: 120px; height: 120px; margin: 0 auto; border-radius: 50%; object-fit: cover; }
 .team-card h3 { margin: 24px 0 0; font-size: 20px; font-weight: 500; color: #1e1b6b; }
-
-.team-img {
-  display: block;
-  flex: none;
-  width: 120px;
-  height: 120px;
-  margin: 0 auto;
-  border-radius: 50%;
-  object-fit: cover;
-}
 .team-card p { margin: 12px 0 0; font-size: 12px; letter-spacing: 0.25em; color: var(--color-muted); }
 .team-socials {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  height: 63px;
-  margin-top: auto;
-  border-top: 1px solid #e8ebf2;
+  display: grid; grid-template-columns: repeat(3, 1fr);
+  height: 63px; margin-top: auto; border-top: 1px solid #e8ebf2;
 }
 .team-socials span + span { border-left: 1px solid #e8ebf2; }
 
-
 /* ---------- Newsletter ---------- */
 .newsletter { margin-top: 110px; }
-
 .newsletter .eyebrow {
-  font-family: "Abel", sans-serif;
-  font-weight: 400;
-  font-size: 14px;
-  line-height: 28.5px;
-  letter-spacing: 0.45em;
-  text-indent: 0.45em;
-  color: #8a898e;
-  text-align: center;
+  font-family: "Abel", sans-serif; font-weight: 400; font-size: 14px;
+  line-height: 28.5px; letter-spacing: 0.45em; text-indent: 0.45em;
+  color: #8a898e; text-align: center;
 }
 .newsletter .section-title {
-  height: 29px;
-  margin: 19px 0 0;
-  font-family: "Abel", sans-serif;
-  font-weight: 400;
-  font-size: 52px;
-  line-height: 28.5px;
-  letter-spacing: 0;
-  color: #0b1b35;
-  text-align: center;
+  height: 29px; margin: 19px 0 0;
+  font-family: "Abel", sans-serif; font-weight: 400; font-size: 52px;
+  line-height: 28.5px; letter-spacing: 0; color: #0b1b35; text-align: center;
 }
-
-
-.newsletter-card {
-  display: grid;
-  grid-template-columns: 1fr 700px;
-  height: 367px;
-  margin-top: 101px;
-}
-
-
-.newsletter-img {
-  display: block;
-  align-self: start;
-  width: 292.68px;
-  height: 322.29px;
-  margin-left: 62.81px;
-}
-
+/* Group 24: 1170 x 367 */
+.newsletter-card { display: grid; grid-template-columns: 1fr 700px; height: 367px; margin-top: 101px; }
+.newsletter-img { display: block; align-self: start; width: 292.68px; height: 322.29px; margin-left: 62.81px; }
 .newsletter-form-col { padding-top: 25px; }
-
-
 .newsletter-text {
-  width: 684px;
-  max-width: 100%;
-  height: 78px;
-  margin: 0 0 23px 12px;
-  font-family: "Roboto", sans-serif;
-  font-weight: 400;
-  font-size: 18px;
-  line-height: 28.5px;
-  color: #000;
+  width: 684px; max-width: 100%; height: 78px; margin: 0 0 23px 12px;
+  font-family: "Roboto", sans-serif; font-weight: 400; font-size: 18px; line-height: 28.5px; color: #000;
 }
-
-
 .newsletter-input {
-  display: block;
-  width: 100%;
-  height: 77px;
-  padding: 0 24px 0 66px;
-  border: 1px solid transparent;
-  border-radius: 49px;
+  display: block; width: 100%; height: 77px; padding: 0 24px 0 66px;
+  border: 1px solid transparent; border-radius: 49px;
   background:
     linear-gradient(#fff, #fff) padding-box,
     linear-gradient(180deg, rgba(0, 0, 0, 0.18) -78.06%, rgba(0, 0, 0, 0) 236.73%) border-box;
-  font-family: "Roboto", sans-serif;
-  font-size: 24px;
-  line-height: 28.5px;
-  color: #000;
+  font-family: "Roboto", sans-serif; font-size: 24px; line-height: 28.5px; color: #000;
   outline: none;
 }
 .newsletter-input::placeholder { color: #000; opacity: 1; }
 .newsletter-input:focus-visible { outline: 2px solid #ff6600; outline-offset: 2px; }
-
-/* Group 21: 700 x 49, radius 10 */
 .newsletter-btn {
-  display: flex;
-  align-items: center;
-  width: 100%;
-  height: 49px;
-  margin-top: 51px;
-  padding: 0 0 0 249px;
-  border: 0;
-  border-radius: 10px;
-  background: #ff6600;
-  color: #fff;
-  font-family: "Poppins", sans-serif;
-  font-weight: 500;
-  font-size: 18px;
-  line-height: 28.5px;
+  display: flex; align-items: center; width: 100%; height: 49px;
+  margin-top: 51px; padding: 0 0 0 249px;
+  border: 0; border-radius: 10px; background: #ff6600; color: #fff;
+  font-family: "Poppins", sans-serif; font-weight: 500; font-size: 18px; line-height: 28.5px;
   cursor: pointer;
 }
 .newsletter-btn:hover { opacity: 0.9; }
 
 /* ---------- Footer ---------- */
-/* Newsletter কার্ডের নিচ (4208) থেকে Copyright-এর top (4374) = 166px */
 .site-footer { margin-top: 166px; padding-bottom: 41px; }
-
 .footer-row {
-  display: flex;
-  align-items: center;
-  height: 27px;
-  font-family: "DM Sans", sans-serif;
-  font-weight: 400;
-  font-size: 16px;
-  line-height: 26px;
-  letter-spacing: 0;
-  color: #1e0e62;
+  display: flex; align-items: center; height: 27px;
+  font-family: "DM Sans", sans-serif; font-weight: 400;
+  font-size: 16px; line-height: 26px; letter-spacing: 0; color: #1e0e62;
 }
-
-/* Copyright: 570px = লোগো 111 + ফাঁক 90 + লেখা 369 */
 .footer-left { display: flex; flex: 0 1 570px; align-items: center; gap: 90px; }
 .footer-left img { display: block; width: 111px; height: 23px; object-fit: contain; }
 .footer-left p { margin: 0; }
-
-/* Menu: 455px চওড়া, left 846 (= কন্টেইনারের বাঁ থেকে 711 = 570 + 141) */
-.footer-nav {
-  display: flex;
-  flex: 0 1 455px;
-  justify-content: space-between;
-  margin-left: 141px;
-}
-
-/* রেখা: সারির নিচ (4401) ও নোটের top (4474)-এর ঠিক মাঝে */
+.footer-nav { display: flex; flex: 0 1 455px; justify-content: space-between; margin-left: 141px; }
 .site-footer hr { margin: 36px 0; border: 0; border-top: 1px solid #e8ebf2; }
-
-/* নোট: DM Sans 16px/26px, #15143966, width 969 */
 .footer-note {
-  max-width: 969px;
-  margin: 0;
-  font-family: "DM Sans", sans-serif;
-  font-weight: 400;
-  font-size: 16px;
-  line-height: 26px;
-  letter-spacing: 0;
-  color: #15143966;
+  max-width: 969px; margin: 0;
+  font-family: "DM Sans", sans-serif; font-weight: 400;
+  font-size: 16px; line-height: 26px; letter-spacing: 0; color: #15143966;
 }
 
 /* ---------- Responsive ---------- */
@@ -466,9 +328,11 @@ a { color: inherit; text-decoration: none; }
   .site-nav { display: none; }
   .site-actions { justify-self: end; }
 }
+@media (min-width: 1200px) {
+  .site-nav { justify-content: flex-start; padding-left: 119px; }
+}
 
 @media (max-width: 900px) {
-    .feature { min-height: 0; margin-top: 80px; }
   .hero-section { width: calc(100vw - 48px); min-height: 0; margin: 26px 24px 0; }
   .hero-copy { position: relative; top: auto; width: min(653px, 100%); }
   .hero-copy h1 { height: auto; font-size: clamp(44px, 8vw, 70px); line-height: 1.16; }
@@ -476,30 +340,35 @@ a { color: inherit; text-decoration: none; }
   .hero-actions { margin-top: 30px; }
   .hero-art { position: relative; left: auto; width: min(707px, 100%); height: auto; margin: 40px auto 0; }
 
+  .section-title { font-size: 32px; }
+
   .services-grid, .team-grid { grid-template-columns: 1fr; gap: 24px; }
   .services-grid { margin-top: 56px; }
   .service-card { min-height: 0; }
-  .feature, .newsletter-grid { grid-template-columns: 1fr; gap: 32px; }
+
+  .feature { grid-template-columns: 1fr; gap: 32px; min-height: 0; margin-top: 80px; }
   .feature-text { max-width: none; gap: 24px; }
   .feature-media { height: 260px; }
+
   .testimonial-grid { grid-template-columns: 1fr; gap: 36px; }
-  .section-title { font-size: 32px; }
-    .site-footer { margin-top: 80px; }
-  .footer-row { flex-direction: column; align-items: flex-start; gap: 24px; height: auto; }
-  .footer-left { flex: none; flex-wrap: wrap; gap: 20px; }
-  .footer-nav { flex: none; flex-wrap: wrap; gap: 20px 32px; margin-left: 0; }
-  .site-footer hr { margin: 24px 0; }
-    .team .section-title { font-size: 40px; }
+
+  .team .section-title { font-size: 40px; }
   .team-card { height: auto; padding-bottom: 0; }
   .team-socials { margin-top: 36px; }
 
-    .newsletter .section-title { height: auto; font-size: 40px; line-height: 1.2; }
+  .newsletter .section-title { height: auto; font-size: 40px; line-height: 1.2; }
   .newsletter-card { grid-template-columns: 1fr; height: auto; margin-top: 56px; padding: 24px 16px; }
   .newsletter-img { width: min(220px, 60%); height: auto; margin: 0 auto; }
   .newsletter-form-col { padding-top: 24px; }
   .newsletter-text { width: 100%; height: auto; margin: 0 0 24px; }
   .newsletter-input { height: 64px; padding-left: 24px; font-size: 18px; }
   .newsletter-btn { justify-content: center; margin-top: 24px; padding-left: 0; }
+
+  .site-footer { margin-top: 80px; }
+  .footer-row { flex-direction: column; align-items: flex-start; gap: 24px; height: auto; }
+  .footer-left { flex: none; flex-wrap: wrap; gap: 20px; }
+  .footer-nav { flex: none; flex-wrap: wrap; gap: 20px 32px; margin-left: 0; }
+  .site-footer hr { margin: 24px 0; }
 }
 
 @media (max-width: 480px) {
@@ -509,6 +378,6 @@ a { color: inherit; text-decoration: none; }
   .hero-section { width: calc(100% - 32px); margin-right: 16px; margin-left: 16px; }
   .hero-copy h1 { font-size: clamp(38px, 11vw, 52px); line-height: 1.16; }
   .hero-copy p { font-size: 18px; line-height: 1.4; }
-    .team .section-title { font-size: 34px; }
-    .newsletter .section-title { font-size: 30px; }
+  .team .section-title { font-size: 34px; }
+  .newsletter .section-title { font-size: 30px; }
 }
