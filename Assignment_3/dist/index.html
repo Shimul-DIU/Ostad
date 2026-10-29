@@ -1,0 +1,346 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Md. Shimul Mia | Full Stack Developer</title>
+  <meta name="description" content="Portfolio of Md. Shimul Mia - CSE student and aspiring Full Stack Developer." />
+ 
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  
+  <link rel="stylesheet" crossorigin href="/assets/index-CERjiSN1.css">
+</head>
+
+<body class="bg-slate-950 text-slate-200 font-sans antialiased">
+
+  <!--NAVBAR -->
+  <header class="fixed top-0 inset-x-0 z-50 bg-slate-950/80 backdrop-blur border-b border-slate-800">
+    <nav class="max-w-6xl mx-auto px-4 sm:px-6 h-16 flex items-center justify-between">
+      <a href="#home" class="text-xl font-extrabold tracking-tight">
+        <span class="gradient-text">Shimul</span><span class="text-white">.dev</span>
+      </a>
+
+      <!-- Desktop links -->
+      <ul class="hidden md:flex items-center gap-8 text-sm font-medium">
+        <li><a href="#home" class="hover:text-brand-400 transition">Home</a></li>
+        <li><a href="#about" class="hover:text-brand-400 transition">About</a></li>
+        <li><a href="#skills" class="hover:text-brand-400 transition">Skills</a></li>
+        <li><a href="#projects" class="hover:text-brand-400 transition">Projects</a></li>
+        <li><a href="#contact" class="hover:text-brand-400 transition">Contact</a></li>
+      </ul>
+
+      <!-- Mobile toggle -->
+      <button id="menu-btn" aria-label="Toggle menu" class="md:hidden p-2 rounded-lg hover:bg-slate-800">
+        <svg id="icon-open" class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" d="M4 6h16M4 12h16M4 18h16"/></svg>
+        <svg id="icon-close" class="w-6 h-6 hidden" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" d="M6 6l12 12M18 6L6 18"/></svg>
+      </button>
+    </nav>
+
+    <!-- Mobile menu -->
+    <div id="mobile-menu" class="hidden md:hidden border-t border-slate-800 bg-slate-950">
+      <ul class="px-4 py-3 space-y-1 text-sm font-medium">
+        <li><a href="#home" class="block px-3 py-2 rounded-lg hover:bg-slate-800">Home</a></li>
+        <li><a href="#about" class="block px-3 py-2 rounded-lg hover:bg-slate-800">About</a></li>
+        <li><a href="#skills" class="block px-3 py-2 rounded-lg hover:bg-slate-800">Skills</a></li>
+        <li><a href="#projects" class="block px-3 py-2 rounded-lg hover:bg-slate-800">Projects</a></li>
+        <li><a href="#contact" class="block px-3 py-2 rounded-lg hover:bg-slate-800">Contact</a></li>
+      </ul>
+    </div>
+  </header>
+
+  <main>
+    <!-- HERO  -->
+    <section id="home" class="pt-28 pb-16 sm:pt-36 sm:pb-24">
+      <div class="max-w-6xl mx-auto px-4 sm:px-6 grid md:grid-cols-2 gap-10 items-center">
+        <div class="order-2 md:order-1 text-center md:text-left">
+          <p class="text-brand-400 font-semibold mb-2">Hello, I'm</p>
+          <h1 class="text-4xl sm:text-5xl lg:text-6xl font-extrabold text-white leading-tight">
+            Md. Shimul Mia
+          </h1>
+          <h2 class="mt-3 text-xl sm:text-2xl font-bold gradient-text">
+            Full Stack Developer (MERN)
+          </h2>
+          <p class="mt-5 text-slate-400 max-w-xl mx-auto md:mx-0 leading-relaxed">
+            Final-year CSE student who loves building clean, responsive and
+            user-friendly web applications with React, Node.js and MongoDB.
+            Currently looking for an entry-level Software Developer role.
+          </p>
+          <div class="mt-8 flex flex-col sm:flex-row gap-4 justify-center md:justify-start">
+            <a href="#projects" class="px-6 py-3 rounded-xl bg-brand-600 hover:bg-brand-500 text-white font-semibold transition shadow-lg shadow-brand-600/30">
+              View Projects
+            </a>
+            <a href="#contact" class="px-6 py-3 rounded-xl border border-slate-700 hover:border-brand-400 hover:text-brand-400 font-semibold transition">
+              Contact Me
+            </a>
+          </div>
+        </div>
+
+        <div class="order-1 md:order-2 flex justify-center">
+          <div class="relative">
+            <div class="absolute -inset-2 rounded-full bg-gradient-to-tr from-white to bg-gray-400 blur-lg opacity-60"></div>
+           
+            <img
+              src="/assets/profileImg-Cmfbl4ty.jpg"
+              alt="Md. Shimul Mia profile photo"
+              class="relative w-48 h-48 sm:w-64 sm:h-64 lg:w-80 lg:h-80 rounded-full object-cover border-4 border-white"
+            />
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= ABOUT ================= -->
+    <section id="about" class="py-16 sm:py-24 bg-slate-900/50">
+      <div class="max-w-6xl mx-auto px-4 sm:px-6">
+        <h2 class="text-3xl sm:text-4xl font-bold text-white text-center">About <span class="gradient-text">Me</span></h2>
+        <div class="mt-3 mx-auto w-16 h-1 rounded bg-brand-500"></div>
+
+        <div class="mt-10 grid md:grid-cols-3 gap-6">
+          <div class="md:col-span-2 space-y-4 text-slate-400 leading-relaxed">
+            <p>
+              I'm <span class="text-white font-semibold">Md. Shimul Mia</span>, a passionate web developer
+              from Dhaka, Bangladesh. I enjoy turning ideas and designs into fast, accessible and
+              responsive websites.
+            </p>
+            <p>
+              I'm currently in the final year of my B.Sc. in Computer Science &amp; Engineering at
+              Dhaka International University. Alongside my studies, I'm learning the MERN stack,
+              solving problems on LeetCode and Beecrowd (550+ solved), and building real projects.
+            </p>
+            <p>
+              <span class="text-white font-semibold">Career goal:</span> to grow as a Full Stack Developer
+              in a team where I can build impactful products and keep learning every day.
+              Outside coding, I'm interested in problem solving and AI/NLP research.
+            </p>
+          </div>
+
+          <div class="grid grid-cols-2 md:grid-cols-1 gap-4">
+            <div class="rounded-2xl bg-slate-900 border border-slate-800 p-5 text-center">
+              <p class="text-3xl font-extrabold gradient-text">550+</p>
+              <p class="text-sm text-slate-400 mt-1">Problems Solved</p>
+            </div>
+            <div class="rounded-2xl bg-slate-900 border border-slate-800 p-5 text-center">
+              <p class="text-3xl font-extrabold gradient-text">10+</p>
+              <p class="text-sm text-slate-400 mt-1">Projects Built</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= SKILLS ================= -->
+    <section id="skills" class="py-16 sm:py-24">
+      <div class="max-w-6xl mx-auto px-4 sm:px-6">
+        <h2 class="text-3xl sm:text-4xl font-bold text-white text-center">My <span class="gradient-text">Skills</span></h2>
+        <div class="mt-3 mx-auto w-16 h-1 rounded bg-brand-500"></div>
+
+        <div class="mt-10 grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
+          <!-- Frontend -->
+          <div class="rounded-2xl bg-slate-900 border border-slate-800 p-6 hover:border-brand-500 transition">
+            <h3 class="text-lg font-bold text-white mb-4">🎨 Frontend</h3>
+            <div class="flex flex-wrap gap-2 text-sm">
+              <span class="px-3 py-1 rounded-full bg-orange-500/10 text-orange-400">HTML5</span>
+              <span class="px-3 py-1 rounded-full bg-blue-500/10 text-blue-400">CSS3</span>
+              <span class="px-3 py-1 rounded-full bg-cyan-500/10 text-cyan-400">Tailwind CSS</span>
+              <span class="px-3 py-1 rounded-full bg-yellow-500/10 text-yellow-400">JavaScript</span>
+              <span class="px-3 py-1 rounded-full bg-blue-400/10 text-blue-300">TypeScript</span>
+              <span class="px-3 py-1 rounded-full bg-sky-500/10 text-sky-400">React</span>
+              <span class="px-3 py-1 rounded-full bg-slate-500/20 text-slate-300">Next.js</span>
+              <span class="px-3 py-1 rounded-full bg-purple-500/10 text-purple-400">Redux</span>
+            </div>
+          </div>
+
+          <!-- Backend -->
+          <div class="rounded-2xl bg-slate-900 border border-slate-800 p-6 hover:border-brand-500 transition">
+            <h3 class="text-lg font-bold text-white mb-4">⚙️ Backend &amp; Database</h3>
+            <div class="flex flex-wrap gap-2 text-sm">
+              <span class="px-3 py-1 rounded-full bg-green-500/10 text-green-400">Node.js</span>
+              <span class="px-3 py-1 rounded-full bg-slate-500/20 text-slate-300">Express.js</span>
+              <span class="px-3 py-1 rounded-full bg-emerald-500/10 text-emerald-400">MongoDB</span>
+              <span class="px-3 py-1 rounded-full bg-blue-500/10 text-blue-400">PostgreSQL</span>
+              <span class="px-3 py-1 rounded-full bg-amber-500/10 text-amber-400">MySQL</span>
+            </div>
+          </div>
+
+          <!-- Tools & Languages -->
+          <div class="rounded-2xl bg-slate-900 border border-slate-800 p-6 hover:border-brand-500 transition sm:col-span-2 lg:col-span-1">
+            <h3 class="text-lg font-bold text-white mb-4">🛠️ Languages &amp; Tools</h3>
+            <div class="flex flex-wrap gap-2 text-sm">
+              <span class="px-3 py-1 rounded-full bg-blue-500/10 text-blue-400">C</span>
+              <span class="px-3 py-1 rounded-full bg-blue-500/10 text-blue-400">C++</span>
+              <span class="px-3 py-1 rounded-full bg-yellow-500/10 text-yellow-300">Python</span>
+              <span class="px-3 py-1 rounded-full bg-red-500/10 text-red-400">Git</span>
+              <span class="px-3 py-1 rounded-full bg-slate-500/20 text-slate-300">GitHub</span>
+              <span class="px-3 py-1 rounded-full bg-orange-500/10 text-orange-400">Firebase</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= PROJECTS ================= -->
+    <section id="projects" class="py-16 sm:py-24 bg-slate-900/50">
+      <div class="max-w-6xl mx-auto px-4 sm:px-6">
+        <h2 class="text-3xl sm:text-4xl font-bold text-white text-center">My <span class="gradient-text">Projects</span></h2>
+        <div class="mt-3 mx-auto w-16 h-1 rounded bg-brand-500"></div>
+
+        <div class="mt-10 grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
+
+          <!-- Project 1 -->
+          <article class="flex flex-col rounded-2xl overflow-hidden bg-slate-900 border border-slate-800 hover:border-brand-500 hover:-translate-y-1 transition">
+            <img src="/assets/kmrf-UgQVCE0k.png" alt="KMRF website preview" class="w-full h-48 object-cover object-top" />
+            <div class="p-5 flex flex-col flex-1">
+              <h3 class="text-lg font-bold text-white">KMRF Charity Website</h3>
+              <p class="mt-2 text-sm text-slate-400 flex-1">
+                Full-stack MERN rebuild of a Sufi-based charity organization's website with a
+                dedicated admin panel to manage content.
+              </p>
+              <div class="mt-3 flex flex-wrap gap-2 text-xs text-brand-400">
+                <span>React</span><span>•</span><span>Node.js</span><span>•</span><span>MongoDB</span>
+              </div>
+              <div class="mt-5 flex gap-3">
+                <a href="https://foundation-a7d60.web.app/" target="_blank" rel="noopener" class="flex-1 text-center px-4 py-2 rounded-lg bg-brand-600 hover:bg-brand-500 text-white text-sm font-semibold transition">Live Demo</a>
+                <a href="https://github.com/Shimul-DIU/Khwaja-Mozammel-Hoque-Foundation" target="_blank" rel="noopener" class="flex-1 text-center px-4 py-2 rounded-lg border border-slate-700 hover:border-brand-400 text-sm font-semibold transition">Source Code</a>
+              </div>
+            </div>
+          </article>
+
+          <!-- Project 2 -->
+          <article class="flex flex-col rounded-2xl overflow-hidden bg-slate-900 border border-slate-800 hover:border-brand-500 hover:-translate-y-1 transition">
+            <img src="/assets/Ecommerce-DXvSg-wY.png" alt="Shopping website preview" class="w-full h-48 object-cover" />
+            <div class="p-5 flex flex-col flex-1">
+              <h3 class="text-lg font-bold text-white">E-commerce Shopping Site</h3>
+              <p class="mt-2 text-sm text-slate-400 flex-1">
+                A responsive online shopping website with product listing, cart and a clean
+                checkout flow, deployed on Firebase Hosting.
+              </p>
+              <div class="mt-3 flex flex-wrap gap-2 text-xs text-brand-400">
+                <span>React</span><span>•</span><span>Tailwind</span><span>•</span><span>Firebase</span>
+              </div>
+              <div class="mt-5 flex gap-3">
+                <a href="https://shimulshopping.web.app" target="_blank" rel="noopener" class="flex-1 text-center px-4 py-2 rounded-lg bg-brand-600 hover:bg-brand-500 text-white text-sm font-semibold transition">Live Demo</a>
+                <a href="https://github.com/Shimul-DIU/Ecommerce_website" target="_blank" rel="noopener" class="flex-1 text-center px-4 py-2 rounded-lg border border-slate-700 hover:border-brand-400 text-sm font-semibold transition">Source Code</a>
+              </div>
+            </div>
+          </article>
+
+          <!-- Project 3 -->
+          <article class="flex flex-col rounded-2xl overflow-hidden bg-slate-900 border border-slate-800 hover:border-brand-500 hover:-translate-y-1 transition sm:col-span-2 lg:col-span-1">
+            <img src="/assets/portfolio-FDjCzueb.png" alt="Text classification thesis preview" class="w-full h-48 object-cover" />
+            <div class="p-5 flex flex-col flex-1">
+              <h3 class="text-lg font-bold text-white">Portfolio Website</h3>
+              <p class="mt-2 text-sm text-slate-400 flex-1">
+                Personal portfolio website showcasing projects, skills, and experience.
+              </p>
+              <div class="mt-3 flex flex-wrap gap-2 text-xs text-brand-400">
+                <span>HTML</span><span>•</span><span>CSS</span><span>•</span><span>JavaScript</span>
+              </div>
+              <div class="mt-5 flex gap-3">
+                <a href="https://shimul-portfolio.web.app/" target="_blank" rel="noopener" class="flex-1 text-center px-4 py-2 rounded-lg bg-brand-600 hover:bg-brand-500 text-white text-sm font-semibold transition">Live Demo</a>
+                <a href="https://github.com/Shimul-DIU/Portfolio-Website/tree/main/client" target="_blank" rel="noopener" class="flex-1 text-center px-4 py-2 rounded-lg border border-slate-700 hover:border-brand-400 text-sm font-semibold transition">Source Code</a>
+              </div>
+            </div>
+          </article>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= EDUCATION ================= -->
+    <section id="education" class="py-16 sm:py-24">
+      <div class="max-w-3xl mx-auto px-4 sm:px-6">
+        <h2 class="text-3xl sm:text-4xl font-bold text-white text-center">My <span class="gradient-text">Education</span></h2>
+        <div class="mt-3 mx-auto w-16 h-1 rounded bg-brand-500"></div>
+
+        <div class="mt-10 relative border-l-2 border-slate-800 ml-3 space-y-10">
+          <div class="relative pl-8">
+            <span class="absolute -left-[9px] top-1.5 w-4 h-4 rounded-full bg-brand-500 ring-4 ring-slate-950"></span>
+            <p class="text-sm text-brand-400 font-semibold">Present (Final Year)</p>
+            <h3 class="text-lg font-bold text-white">B.Sc. in Computer Science &amp; Engineering</h3>
+            <p class="text-slate-400">Dhaka International University (DIU)</p>
+            <p class="text-sm text-slate-500 mt-1">CGPA: 3.62 / 4.00</p>
+          </div>
+
+          <div class="relative pl-8">
+            <span class="absolute -left-[9px] top-1.5 w-4 h-4 rounded-full bg-cyan-400 ring-4 ring-slate-950"></span>
+            <p class="text-sm text-cyan-400 font-semibold">2019 – 2021</p>
+            <h3 class="text-lg font-bold text-white">Higher Secondary Certificate (HSC)</h3>
+            <p class="text-slate-400">Govt. Bangabandhu College, Mymensingh</p>
+            <p class="text-sm text-slate-500 mt-1">GPA: 4.83 / 5.00</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= CONTACT ================= -->
+    <section id="contact" class="py-16 sm:py-24 bg-slate-900/50">
+      <div class="max-w-5xl mx-auto px-4 sm:px-6">
+        <h2 class="text-3xl sm:text-4xl font-bold text-white text-center">Get In <span class="gradient-text">Touch</span></h2>
+        <div class="mt-3 mx-auto w-16 h-1 rounded bg-brand-500"></div>
+
+        <div class="mt-10 grid md:grid-cols-2 gap-8">
+          <!-- Info -->
+          <div class="space-y-5">
+            <p class="text-slate-400">
+              I'm open to job opportunities and collaboration. Feel free to reach out!
+            </p>
+            <a href="mailto:md.shimuldiu@gmail.com" class="flex items-center gap-3 p-4 rounded-xl bg-slate-900 border border-slate-800 hover:border-brand-500 transition break-all">
+              <span class="text-xl">📧</span> md.shimuldiu@gmail.com
+            </a>
+            <a href="https://github.com/Shimul-DIU" target="_blank" rel="noopener" class="flex items-center gap-3 p-4 rounded-xl bg-slate-900 border border-slate-800 hover:border-brand-500 transition">
+              <span class="text-xl">💻</span> github.com/Shimul-DIU
+            </a>
+            <a href="https://www.linkedin.com/in/your-username" target="_blank" rel="noopener" class="flex items-center gap-3 p-4 rounded-xl bg-slate-900 border border-slate-800 hover:border-brand-500 transition">
+              <span class="text-xl">🔗</span> LinkedIn Profile
+            </a>
+          </div>
+
+          <!-- Form (design only) -->
+          <form id="contact-form" class="space-y-4 p-6 rounded-2xl bg-slate-900 border border-slate-800">
+            <div>
+              <label for="name" class="block text-sm font-medium mb-1">Name</label>
+              <input id="name" type="text" required placeholder="Your name"
+                class="w-full px-4 py-2.5 rounded-lg bg-slate-950 border border-slate-700 focus:border-brand-500 focus:outline-none" />
+            </div>
+            <div>
+              <label for="email" class="block text-sm font-medium mb-1">Email</label>
+              <input id="email" type="email" required placeholder="you@example.com"
+                class="w-full px-4 py-2.5 rounded-lg bg-slate-950 border border-slate-700 focus:border-brand-500 focus:outline-none" />
+            </div>
+            <div>
+              <label for="message" class="block text-sm font-medium mb-1">Message</label>
+              <textarea id="message" rows="4" required placeholder="Write your message..."
+                class="w-full px-4 py-2.5 rounded-lg bg-slate-950 border border-slate-700 focus:border-brand-500 focus:outline-none resize-none"></textarea>
+            </div>
+            <button type="submit" class="w-full px-6 py-3 rounded-lg bg-brand-600 hover:bg-brand-500 text-white font-semibold transition">
+              Send Message
+            </button>
+            <p id="form-msg" class="hidden text-sm text-green-400 text-center">Thanks! Your message has been noted.</p>
+          </form>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- ================= FOOTER ================= -->
+  <footer class="border-t border-slate-800 py-8">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 flex flex-col md:flex-row items-center justify-between gap-4 text-sm text-slate-400">
+      <a href="#home" class="text-lg font-extrabold">
+        <span class="gradient-text">Shimul</span><span class="text-white">.dev</span>
+      </a>
+      <ul class="flex flex-wrap justify-center gap-5">
+        <li><a href="#about" class="hover:text-brand-400">About</a></li>
+        <li><a href="#skills" class="hover:text-brand-400">Skills</a></li>
+        <li><a href="#projects" class="hover:text-brand-400">Projects</a></li>
+        <li><a href="#contact" class="hover:text-brand-400">Contact</a></li>
+        <li><a href="https://github.com/Shimul-DIU" target="_blank" rel="noopener" class="hover:text-brand-400">GitHub</a></li>
+        <li><a href="https://www.linkedin.com/in/your-username" target="_blank" rel="noopener" class="hover:text-brand-400">LinkedIn</a></li>
+      </ul>
+      <p>&copy; <span id="year"></span> Md. Shimul Mia. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <script src="./index.js"></script> 
+</body>
+</html>
